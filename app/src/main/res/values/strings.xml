@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Iontophoresis</string>
+    <array name="Gender">
+        <item>Man</item>
+        <item>Woman</item>
+    </array>
 </resources>

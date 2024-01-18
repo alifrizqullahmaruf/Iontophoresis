@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterUserActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="100dp"
+            >
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/logo_app"
+                android:layout_marginBottom="40dp"
+                />
+
+            <!-- headlineText -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginBottom="30dp"
+                >
+                <TextView
+                    android:id="@+id/headlineText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register Page"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="#191919"
+                    android:layout_marginBottom="10dp"
+                    />
+                <TextView
+                    android:id="@+id/headlineTextDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weare here to help you!"/>
+
+            </LinearLayout>
+
+            <!-- NameInput -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/NameInput"
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/NameInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- nickNameInput -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nickNameInput"
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_height="wrap_content"
+                android:hint="Nickname"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nickNameInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- emailInput -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailInput"
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                app:startIconDrawable="@drawable/baseline_email_24"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="50dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- dateBirthInput -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dateBirthInput"
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_height="wrap_content"
+                android:hint="Date of Birth"
+                app:startIconDrawable="@drawable/baseline_calendar_month_24"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dateBirthInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="50dp"
+                    android:inputType="date"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- genderInput -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/genderInput"
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_height="wrap_content"
+                android:hint="Gender"
+                >
+                <Spinner
+                    android:id="@+id/genderInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/Gender"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- passwordInput -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordInput"
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                app:startIconDrawable="@drawable/baseline_lock_24"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:paddingStart="50dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- passwordInputVericication -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordInputVericication"
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                app:startIconDrawable="@drawable/baseline_lock_24"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordInputVericicationText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+
+                    android:paddingStart="50dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- buttonLogin -->
+            <Button
+                android:layout_marginTop="40dp"
+                android:id="@+id/buttonLogin"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
+                android:text="Login"
+                android:backgroundTint="@color/black"
+                />
+
+            <!-- iconSocial -->
+            <LinearLayout
+                android:id="@+id/iconSocial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                >
+                <!-- iconSocialGoogle -->
+                <ImageView
+                    android:id="@+id/iconSocialGoogle"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/google"
+                    android:layout_marginEnd="34dp"
+                    />
+                <!-- iconSocialFacebook -->
+                <ImageView
+                    android:id="@+id/iconSocialFacebook"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/facebook"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
