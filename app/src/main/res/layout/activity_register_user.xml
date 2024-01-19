@@ -196,10 +196,10 @@
             <!-- buttonLogin -->
             <Button
                 android:layout_marginTop="40dp"
-                android:id="@+id/buttonLogin"
+                android:id="@+id/buttonRegister"
                 android:layout_width="320dp"
                 android:layout_height="60dp"
-                android:text="Login"
+                android:text="Register"
                 android:backgroundTint="@color/black"
                 />
 
