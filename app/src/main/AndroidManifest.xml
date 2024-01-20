@@ -16,16 +16,16 @@
             android:name=".Home"
             android:exported="false" />
         <activity
-            android:name=".RegisterUserActivity"
+            android:name=".Auth.RegisterUserActivity"
             android:exported="false" />
         <activity
             android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Auth.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Auth.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

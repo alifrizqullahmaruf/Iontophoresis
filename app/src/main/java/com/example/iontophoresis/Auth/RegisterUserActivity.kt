@@ -1,11 +1,12 @@
-package com.example.iontophoresis
+package com.example.iontophoresis.Auth
 
 import android.content.Intent
-import android.media.MediaPlayer.OnCompletionListener
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.iontophoresis.Adapter.PrefManager
+import com.example.iontophoresis.Home
 import com.example.iontophoresis.databinding.ActivityRegisterUserBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
@@ -13,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class RegisterUserActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterUserBinding
+    private lateinit var prefManager: PrefManager
 
     // Firebase Authentication instance (initialized later in onViewCreated)
     lateinit var mAuth: FirebaseAuth
@@ -21,6 +23,9 @@ class RegisterUserActivity : AppCompatActivity() {
         binding = ActivityRegisterUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
         mAuth = FirebaseAuth.getInstance()
+        prefManager = PrefManager.getInstance(this)
+
+        checkLoginStatus()
 
 
         with(binding){
@@ -35,7 +40,7 @@ class RegisterUserActivity : AppCompatActivity() {
                 }
 
                 // Check if password is not empty
-                if (email.isEmpty()){
+                if (password.isEmpty()){
                     Toast.makeText(this@RegisterUserActivity, "Input password", Toast.LENGTH_SHORT).show()
                 }
 
@@ -43,7 +48,7 @@ class RegisterUserActivity : AppCompatActivity() {
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                     OnCompleteListener<AuthResult?>{ task->
                         if (task.isSuccessful){
-
+                            saveLoginCredentials(email, password)
                             val Name =binding.NameInputText.text.toString()
                             val nickName =binding.nickNameInputText.text.toString()
 
@@ -62,7 +67,7 @@ class RegisterUserActivity : AppCompatActivity() {
                         }
                     }
                 }
-                startActivity(Intent(this@RegisterUserActivity,LoginActivity::class.java))
+                startActivity(Intent(this@RegisterUserActivity, LoginActivity::class.java))
             }
 
             // Icon google click listener
@@ -80,6 +85,26 @@ class RegisterUserActivity : AppCompatActivity() {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(facebook))
                 startActivity(intent)
             }
+        }
+
+    }
+    // save username dan password
+    private fun saveLoginCredentials(username: String, password: String) {
+        prefManager.saveUsername(username)
+        prefManager.savePassword(password)
+        prefManager.setLoggedIn(true)
+    }
+
+    // Check apa status login
+    private fun checkLoginStatus() {
+        val isLoggedIn = prefManager.isLoggedIn()
+
+        if (isLoggedIn) {
+            Toast.makeText(this, "Login berhasil", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Home::class.java))
+            finish() // Finish the hosting activity
+        } else {
+            Toast.makeText(this, "Login gagal", Toast.LENGTH_SHORT).show()
         }
 
     }

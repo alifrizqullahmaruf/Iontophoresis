@@ -1,4 +1,4 @@
-package com.example.iontophoresis
+package com.example.iontophoresis.Auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
