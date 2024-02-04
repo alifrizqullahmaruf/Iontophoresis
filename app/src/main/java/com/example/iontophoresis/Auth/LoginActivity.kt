@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.iontophoresis.Adapter.PrefManager
+import com.example.iontophoresis.Halaman_utama
 import com.example.iontophoresis.Home
 import com.example.iontophoresis.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -51,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful){
                         saveLoginCredentials(email, password)
                         Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this@LoginActivity, Home::class.java))
+                        startActivity(Intent(this@LoginActivity, Halaman_utama::class.java))
 
                     }else{
                         Toast.makeText(this@LoginActivity, "Login Failed", Toast.LENGTH_SHORT).show()
