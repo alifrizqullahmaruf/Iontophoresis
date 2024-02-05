@@ -3,15 +3,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Home Fragment"
-        android:textSize="30sp"
-        android:gravity="center"
-        />
+        android:orientation="vertical"
+        android:layout_margin="24dp"
+        >
+        <!--Header-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+            <!--Kanan-->
+            <LinearLayout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:textSize="14sp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/location_icon"
+                        />
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/city_array"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Kiri-->
+            <LinearLayout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/notif_icon"
+                    />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Endheader-->
+        
+        
+        <!--SearchBar-->
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:background="@color/gray"
+            />
+        <!--EndSearchBar-->
+        
+        <!--Advertisement-->
+
+        <!--EndAdvertisement-->
+        
+        <!--MyHealth-->
+        <!--EndMyHealth-->
+        
+        <!--MyCalender-->
+        <!--EndMyCalender-->
+        
+        <!--Hospital-->
+        <!--EndHospital-->
+        
+        <!--Doctor-->
+        <!--EndDoctor-->
+
+    </LinearLayout>
 
 </FrameLayout>
