@@ -1,9 +1,10 @@
-package com.example.iontophoresis
+package com.example.iontophoresis.Public
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
+import com.example.iontophoresis.R
 import com.example.iontophoresis.databinding.ActivityHalamanUtamaBinding
 
 class Halaman_utama : AppCompatActivity() {

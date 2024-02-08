@@ -4,13 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment">
-
+    tools:context=".Public.HomeFragment">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="24dp"
+        android:paddingBottom="100dp"
         >
         <!--Header-->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -69,8 +72,8 @@
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!--Endheader-->
-        
-        
+
+
         <!--SearchBar-->
         <SearchView
             android:layout_width="match_parent"
@@ -79,11 +82,11 @@
             android:background="@color/gray"
             />
         <!--EndSearchBar-->
-        
+
         <!--Advertisement-->
 
         <!--EndAdvertisement-->
-        
+
         <!--MyHealth-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -99,7 +102,7 @@
                 >
                 <!--Header-->
                 <TextView
-                    android:id="@+id/Header"
+                    android:id="@+id/HeaderHealth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="My Health"
@@ -109,7 +112,7 @@
                     />
                 <!--Desc-->
                 <TextView
-                    android:id="@+id/Desc"
+                    android:id="@+id/DescHealth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="See all"
@@ -119,7 +122,7 @@
 
             <!--Card-->
             <androidx.cardview.widget.CardView
-                android:layout_marginTop="8dp "
+                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
@@ -171,6 +174,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Golden Cardiology Center"
+                            android:drawableLeft="@drawable/custom_location_icon"
+                            android:drawablePadding="4dp"
                             />
 
                     </LinearLayout>
@@ -181,12 +186,71 @@
 
         </LinearLayout>
         <!--EndMyHealth-->
-        
+
         <!--MyCalender-->
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <!--Word-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <!--Header-->
+                <TextView
+                    android:id="@+id/HeaderCelender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calender"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    />
+                <!--Desc-->
+                <TextView
+                    android:id="@+id/DescCalender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See all"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <!--Calender-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <CalendarView
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 Desember - Dr.Richard"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
         <!--EndMyCalender-->
-        
+
         <!--Hospital-->
         <LinearLayout
+            android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -229,11 +293,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-
                     >
                     <!--Image-->
                     <ImageView
-                        android:paddingTop="-15dp"
+                        android:layout_marginTop="-30dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/hospital_image"
@@ -242,14 +305,15 @@
                     <!--Desc-->
                     <LinearLayout
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
                         android:orientation="vertical">
                         <!--DescText1-->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+
                             android:text="Sunrise Health Clinic"
                             android:textSize="18sp"
                             android:textStyle="bold"
@@ -262,6 +326,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/custom_location_icon"
+                            android:drawablePadding="4dp"
                             android:text="123 Oak Street, CA 98765"
                             android:textSize="15sp"
                             />
@@ -280,10 +346,106 @@
 
         </LinearLayout>
         <!--EndHospital-->
-        
-        <!--Doctor-->
-        <!--EndDoctor-->
 
+        <!--Doctor-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            >
+            <!--Word-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <!--Header-->
+                <TextView
+                    android:id="@+id/HeaderDoctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doctor"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    />
+                <!--Desc-->
+                <TextView
+                    android:id="@+id/DescDoctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See all"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+
+            <!--Card-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    >
+                    <!--Image-->
+                    <ImageView
+                        android:padding="8dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/doctor_image"
+                        />
+
+                    <!--Desc-->
+                    <LinearLayout
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!--DescText1-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Sarah Johnson"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            />
+
+                        <!--DescText2-->
+                        <TextView
+                            android:layout_marginTop="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.9 ⭐"
+                            android:textSize="13sp"
+                            />
+                        <!--DescText3-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/custom_location_icon"
+                            android:drawablePadding="4dp"
+                            android:text="Women's Health Clinic"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <!--EndDoctor-->
     </LinearLayout>
+
+</ScrollView>
+
 
 </FrameLayout>

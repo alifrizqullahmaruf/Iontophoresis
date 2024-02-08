@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.iontophoresis.Adapter.PrefManager
-import com.example.iontophoresis.Halaman_utama
-import com.example.iontophoresis.Home
+import com.example.iontophoresis.Public.Halaman_utama
+import com.example.iontophoresis.Public.HomeFragment
 import com.example.iontophoresis.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -76,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
 
         if (isLoggedIn) {
                 Toast.makeText(this, "Login berhasil", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, Home::class.java))
+                startActivity(Intent(this, Halaman_utama::class.java))
                 finish() // Finish the hosting activity
         } else {
             Toast.makeText(this, "Login gagal", Toast.LENGTH_SHORT).show()

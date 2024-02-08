@@ -1,0 +1,6 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/location_icon2"
+        android:width="12dp"
+    android:height="12dp"
+    android:gravity="center"/>
+</layer-list>
