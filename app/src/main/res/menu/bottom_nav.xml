@@ -5,7 +5,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Home"
-        android:icon="@drawable/home_icon"/>
+        android:icon="@drawable/home_icon"
+        />
     <item
         android:id="@+id/dosis_icon"
         android:layout_width="wrap_content"
