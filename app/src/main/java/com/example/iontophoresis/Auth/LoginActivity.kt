@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.iontophoresis.Adapter.PrefManager
 import com.example.iontophoresis.Public.Halaman_utama
-import com.example.iontophoresis.Public.HomeFragment
 import com.example.iontophoresis.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 

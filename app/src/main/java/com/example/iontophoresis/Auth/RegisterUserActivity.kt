@@ -6,13 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.iontophoresis.Adapter.PrefManager
-import com.example.iontophoresis.Home
+import com.example.iontophoresis.Model.User
 import com.example.iontophoresis.Public.Halaman_utama
-import com.example.iontophoresis.Public.HomeFragment
 import com.example.iontophoresis.databinding.ActivityRegisterUserBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegisterUserActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterUserBinding
@@ -20,15 +20,16 @@ class RegisterUserActivity : AppCompatActivity() {
 
     // Firebase Authentication instance (initialized later in onViewCreated)
     lateinit var mAuth: FirebaseAuth
+    private lateinit var firebaseFirestore: FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
         mAuth = FirebaseAuth.getInstance()
+        firebaseFirestore = FirebaseFirestore.getInstance()
         prefManager = PrefManager.getInstance(this)
 
         checkLoginStatus()
-
 
         with(binding){
             buttonRegister.setOnClickListener {
@@ -54,6 +55,9 @@ class RegisterUserActivity : AppCompatActivity() {
                             val Name =binding.NameInputText.text.toString()
                             val nickName =binding.nickNameInputText.text.toString()
 
+                            val user=User(binding.NameInputText.text.toString(),binding.nickNameInputText.text.toString(),binding.dateBirthInputText.text.toString())
+
+                            firebaseFirestore.collection("Users").document(mAuth.currentUser.toString()).set(user)
                             // Clear text in EditText fields after successful registration
                             binding.NameInputText.text?.clear()
                             binding.nickNameInputText.text?.clear()

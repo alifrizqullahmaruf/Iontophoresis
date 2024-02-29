@@ -27,19 +27,18 @@ class DosisFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentDosisBinding.inflate(inflater, container, false)
-
+        with(_binding!!){
+            val sectionPager = TabAdapter(requireActivity() as AppCompatActivity)
+            viewPager.adapter=sectionPager
+            TabLayoutMediator(tabLayout,viewPager){
+                    tab,position->tab.text=resources.getString(title[position])
+            }.attach()
+        }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        with(_binding!!){
-            val sectionPager = TabAdapter(requireActivity() as AppCompatActivity)
-            viewPager.adapter=sectionPager
-            TabLayoutMediator(tabLayout,viewPager){
-                tab,position->tab.text=resources.getString(title[position])
-            }.attach()
-        }
     }
 
     override fun onDestroyView() {

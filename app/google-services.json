@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1022028427841",
+    "project_id": "iontophoresis-93e38",
+    "storage_bucket": "iontophoresis-93e38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022028427841:android:731552e840c44d1e990cc0",
+        "android_client_info": {
+          "package_name": "com.example.budgetbuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2W6OwJCq7v89xgmufHNV1hjsC_R9-h5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022028427841:android:23e2568c4932adb1990cc0",
+        "android_client_info": {
+          "package_name": "com.example.iontophoresis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2W6OwJCq7v89xgmufHNV1hjsC_R9-h5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

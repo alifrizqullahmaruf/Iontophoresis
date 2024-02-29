@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="257dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_hospital"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/doctor_image"
+            android:scaleType="centerCrop"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:layout_constraintTop_toBottomOf="@id/img_hospital"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/hospital_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunrise Health Clinic"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/img_location"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/location_icon2"
+                app:layout_constraintTop_toBottomOf="@id/hospital_name"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginVertical="8dp"/>
+
+            <TextView
+                android:id="@+id/hospital_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123 Oak Street, CA 98765"
+                app:layout_constraintTop_toBottomOf="@id/hospital_name"
+                android:layout_margin="8dp"
+                app:layout_constraintStart_toEndOf="@id/img_location"/>
+
+                <TextView
+                    android:id="@+id/nmb_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5.0"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/hospital_location"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rating_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="2.5"
+                android:scaleX="0.25"
+                android:scaleY="0.25"
+                android:stepSize="0.5"
+                app:layout_constraintStart_toEndOf="@id/VGuidline"
+                app:layout_constraintEnd_toStartOf="@id/VGuidline"
+                app:layout_constraintBottom_toTopOf="@id/guidline"
+                app:layout_constraintTop_toBottomOf="@id/guidline"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.55"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/VGuidline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.15"/>
+            <View
+                android:id="@+id/line_below"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray_soft"
+                android:layout_marginVertical="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nmb_rating"/>
+
+            <TextView
+                android:id="@+id/range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/line_below"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="2.5 km/40 min"
+                android:layout_marginVertical="8dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
