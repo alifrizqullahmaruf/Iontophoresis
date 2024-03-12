@@ -29,6 +29,8 @@ class HomeFragment : Fragment() {
                 startActivity(intent)
             }
 
+            
+
             doctor.setOnClickListener {
                 val intent=Intent(requireContext(), DoctorActivity::class.java)
                 startActivity(intent)

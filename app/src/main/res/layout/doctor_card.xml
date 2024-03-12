@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Women Health Clinic"
-            android:textColor="@color/gray_soft"
+            android:textColor="@color/gary"
             app:layout_constraintTop_toBottomOf="@id/specialist"
             app:layout_constraintStart_toEndOf="@id/icon_image"/>
         <ImageView

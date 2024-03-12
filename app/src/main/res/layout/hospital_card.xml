@@ -4,7 +4,8 @@
     android:layout_height="257dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="12dp"
-    app:cardElevation="8dp">
+    app:cardElevation="8dp"
+    android:layout_margin="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -52,7 +53,25 @@
                 android:layout_margin="8dp"
                 app:layout_constraintStart_toEndOf="@id/img_location"/>
 
-                <TextView
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rating_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="3"
+                android:scaleX="0.3"
+                android:scaleY="0.3"
+                android:stepSize="0.5"
+                app:layout_constraintBottom_toTopOf="@id/guidline"
+                app:layout_constraintEnd_toStartOf="@id/VGuidline"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toEndOf="@id/VGuidline"
+                app:layout_constraintTop_toBottomOf="@id/guidline"
+                app:layout_constraintVertical_bias="0.35" />
+
+            <TextView
                     android:id="@+id/nmb_rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -63,22 +82,7 @@
                     app:layout_constraintTop_toBottomOf="@id/hospital_location"
                     app:layout_constraintStart_toStartOf="parent"/>
 
-            <androidx.appcompat.widget.AppCompatRatingBar
-                android:id="@+id/rating_stars"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:isIndicator="true"
-                android:numStars="5"
-                android:rating="2.5"
-                android:scaleX="0.25"
-                android:scaleY="0.25"
-                android:stepSize="0.5"
-                app:layout_constraintStart_toEndOf="@id/VGuidline"
-                app:layout_constraintEnd_toStartOf="@id/VGuidline"
-                app:layout_constraintBottom_toTopOf="@id/guidline"
-                app:layout_constraintTop_toBottomOf="@id/guidline"
-                />
+
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidline"
@@ -102,12 +106,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/nmb_rating"/>
 
+            <ImageView
+                android:id="@+id/ic_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_business_24"
+                app:layout_constraintTop_toBottomOf="@id/line_below"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
             <TextView
                 android:id="@+id/range"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/line_below"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ic_city"
                 android:text="2.5 km/40 min"
                 android:layout_marginVertical="8dp"/>
 

@@ -8,22 +8,15 @@ import androidx.fragment.app.Fragment
 
 import com.example.iontophoresis.R
 import com.example.iontophoresis.databinding.FragmentDosisHomeBinding
+import com.google.firebase.database.FirebaseDatabase
 
-/**
- * A simple [Fragment] subclass.
- * Use the [DosisHomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DosisHomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     private lateinit var binding: FragmentDosisHomeBinding
+    private lateinit var firebaseDatabase: FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
         }
     }
 
